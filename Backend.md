@@ -1,6 +1,6 @@
 # Expense Tracker - Backend
 
-This is the Spring Boot backend for the Student Registration Portal. It provides RESTful APIs for managing student records and authentication.
+This is the Spring Boot backend for the Expense Tracker Portal. It provides RESTful APIs for managing Income and Expenses records.
 
 ---
 
