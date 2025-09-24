@@ -119,7 +119,38 @@ Remove the default content that web server is serving.
 ```
 rm -rf /usr/share/nginx/html/*
 ```
+```
+cp /opt/expense-frontend/build/ /usr/share/nginx/html
+```
+```
+sudo vi /etc/nginx/conf.d/default.conf
+```
+```
+server {
+    listen 80;
+    server_name _;
 
+    root /usr/share/nginx/html;
+    index index.html;
+
+    location / {
+        try_files $uri /index.html;
+    }
+
+    # Proxy API calls to backend private IP
+    location /api/ {
+        proxy_pass http://backendserver-ipaddress:8080/api/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+
+    error_page 404 /index.html;
+}
+```
 ---
 ## Folder Structure
 
