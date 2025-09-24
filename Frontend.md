@@ -178,7 +178,7 @@ sudo systemctl restart nginx
 ---
 ## Folder Structure
 
-- `src/components/` - React components (HomePage, AddStudentForm, EditStudentForm, etc.)
+- `src/components/` - React components (EntryForm, EntryList, Report, etc.)
 - `src/services/` - API service for backend communication
 - `public/` - Static assets
 
