@@ -122,9 +122,13 @@ rm -rf /usr/share/nginx/html/*
 ```
 cp /opt/expense-frontend/build/ /usr/share/nginx/html
 ```
+
+## Create Nginx Reverse Proxy Configuration.
+
 ```
 sudo vi /etc/nginx/conf.d/default.conf
 ```
+Add the following content to above mentioned path
 ```
 server {
     listen 80;
@@ -150,6 +154,10 @@ server {
 
     error_page 404 /index.html;
 }
+```
+Restart Nginx Service to load the changes of the configuration.
+```
+systemctl restart nginx
 ```
 ---
 ## Folder Structure
