@@ -1,6 +1,6 @@
 # Expense Tracker - Frontend
 
-This is the React-based frontend for the Expense Tracker Portal. It provides a user-friendly interface for users to manage their expenses.
+This is the React-based frontend for the Expense Tracker Portal. It provides a user-friendly interface for users to manage their expenses and income records.
 
 ---
 
