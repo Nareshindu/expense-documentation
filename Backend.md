@@ -17,9 +17,9 @@ This is the Spring Boot backend for the Expense Tracker Portal. It provides REST
 
 ## Step-by-Step Installation and Setup
 
-### 1. Install Java 8 (OpenJDK 1.8)
+### 1. Install Java 17 (OpenJDK 17.0)
 
-Java is required to run the backend. On RHEL-based systems, install Java 8 using:
+Java is required to run the backend. On RHEL-based systems, install Java 17 using:
 ```
 sudo dnf install -y java-17-openjdk java-17-openjdk-devel
 ```
@@ -27,7 +27,7 @@ sudo dnf install -y java-17-openjdk java-17-openjdk-devel
 ```
 java -version
 ```
-You should see output showing Java 1.8 is installed.
+You should see output showing Java 17.0 is installed.
 
 **Set JAVA_HOME Environment Variable:**
 Add the following lines to your `~/.bashrc` or `/etc/profile.d/java.sh` file:
