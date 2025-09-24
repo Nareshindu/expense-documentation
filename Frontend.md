@@ -101,8 +101,8 @@ This is a static content and to serve static content we need a web server. This 
 
 Developer has chosen Nginx as a web server and thus we will install Nginx Web Server.
 
-1️1 Install Nginx Web Server
-## Install Nginx using dnf (applicable to RHEL, CentOS, or Fedora-based systems):
+## Install Nginx Web Server
+Install Nginx using dnf (applicable to RHEL, CentOS, or Fedora-based systems):
 ```
 sudo dnf install nginx -y 
 ```
