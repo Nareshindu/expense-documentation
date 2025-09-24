@@ -101,35 +101,41 @@ This is a static content and to serve static content we need a web server. This 
 
 Developer has chosen Nginx as a web server and thus we will install Nginx Web Server.
 
-Install Nginx
+1️1 Install Nginx Web Server
+## Install Nginx using dnf (applicable to RHEL, CentOS, or Fedora-based systems):
 ```
 sudo dnf install nginx -y 
 ```
-Enable nginx
+Enable Nginx to start on boot:
 ```
 sudo systemctl enable nginx
 ```
-Start nginx
+Start the Nginx service:
 ```
 sudo systemctl start nginx
 ```
-Try to access the service once over the browser and ensure you get some default content
+## Verify Default Nginx Web Page
+Open a browser and access your server’s IP (e.g., http://your-server-ip). You should see the default Nginx welcome page.
 
-Remove the default content that web server is serving.
+Remove existing default content:
 ```
 rm -rf /usr/share/nginx/html/*
 ```
-Copy build to the below given path
+## Deploy the Frontend Build
+
+Copy the built frontend files to the Nginx HTML directory:
 ```
-cp /opt/expense-frontend/build/ /usr/share/nginx/html
+sudo cp -r /opt/expense-frontend/build/* /usr/share/nginx/html/
 ```
 
-## Create Nginx Reverse Proxy Configuration.
+## Configure Nginx as a Reverse Proxy
+
+Open the Nginx configuration file (or create one if it doesn’t exist):
 
 ```
 sudo vi /etc/nginx/conf.d/default.conf
 ```
-Add the following content to above mentioned path
+Paste the following configuration:
 ```
 server {
     listen 80;
@@ -156,9 +162,18 @@ server {
     error_page 404 /index.html;
 }
 ```
-Restart Nginx Service to load the changes of the configuration.
+Note:- Replace <backend-server-ip> with the private IP address or hostname of your backend server.
+
+
+## Validate Nginx Configuration Before Restart
+Before restarting, validate the syntax:
 ```
-systemctl restart nginx
+sudo nginx -t
+```
+
+## Restart Nginx to Apply Changes
+```
+sudo systemctl restart nginx
 ```
 ---
 ## Folder Structure
