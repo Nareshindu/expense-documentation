@@ -119,6 +119,7 @@ Remove the default content that web server is serving.
 ```
 rm -rf /usr/share/nginx/html/*
 ```
+Copy build to the below given path
 ```
 cp /opt/expense-frontend/build/ /usr/share/nginx/html
 ```
